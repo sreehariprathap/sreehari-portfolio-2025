@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Hero from "@/components/Hero";
 import { ModeToggle } from "@/components/themeToggle";
 import SectionHeader from "@/components/SectionHeader";
@@ -6,7 +7,6 @@ import { projects, skillsCategories } from "./constants/constants";
 import { SectionThemeProvider } from "@/components/ui/section-theme-transition/theme-context";
 import { ThemedSection } from "@/components/ui/section-theme-transition/themed-section";
 import { CareerTimeline } from "@/components/ui/CareerTimeline";
-import { DotBackground } from "@/components/ui/dotBackground";
 
 export default function Home() {
   return (

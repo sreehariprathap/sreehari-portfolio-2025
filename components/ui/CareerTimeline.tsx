@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import {
   useScroll,
   useTransform,
-  motion,
-  AnimatePresence,
+  motion
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { timelineData, getCombinedTimelineData } from "@/app/constants/constants";
@@ -22,10 +22,6 @@ interface TimelineEvent {
   isLifeEvent?: boolean;
 }
 
-interface YearGroup {
-  year: string;
-  events: TimelineEvent[];
-}
 
 type ViewMode = "timeline" | "simple";
 type SectionType = "experience" | "education";
@@ -61,9 +57,6 @@ export const CareerTimeline = () => {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
-  const toggleViewMode = () => {
-    setViewMode(viewMode === "timeline" ? "simple" : "timeline");
-  };
 
   const getEventClassName = (event: TimelineEvent) => {
     if (event.isLifeEvent) {
@@ -125,12 +118,12 @@ export const CareerTimeline = () => {
 
                 {/* Events for this year */}
                 <div className="flex-grow">
-                  {yearGroup.events.map((event, eventIndex) => (
+                  {yearGroup.events.map((event: TimelineEvent, index: number) => (
                     <motion.div
-                      key={eventIndex}
+                      key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: eventIndex * 0.1 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
                       className={`rounded-lg border p-5 shadow-sm hover:shadow-md transition-all duration-300 mb-8 last:mb-0 ${getEventClassName(event)}`}
                     >
                       <div className={`flex flex-col ${event.isKeyEvent && event.image ? "md:flex-row gap-6" : ""}`}>
@@ -156,7 +149,7 @@ export const CareerTimeline = () => {
                                 Clients:
                               </p>
                               <div className="flex flex-wrap gap-2 mt-1">
-                                {event.clients.map((client, i) => (
+                                {event.clients.map((client: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, i: React.Key | null | undefined) => (
                                   <span
                                     key={i}
                                     className="text-xs px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
@@ -170,7 +163,7 @@ export const CareerTimeline = () => {
 
                           {event.skills && event.skills.length > 0 && (
                             <div className="flex flex-wrap gap-2">
-                              {event.skills.slice(0, 5).map((skill, i) => (
+                              {event.skills.slice(0, 5).map((skill: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, i: React.Key | null | undefined) => (
                                 <span
                                   key={i}
                                   className="text-xs px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300"

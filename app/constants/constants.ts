@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const projects = [
   {
     name: "Burnlog - A fitness app that helps you track your calories!",
@@ -575,9 +576,9 @@ export function getCombinedTimelineData() {
   combinedGroups.sort((a, b) => parseInt(b.year) - parseInt(a.year));
   
   // Get all events across all years in a flat array
-  const allEvents = [];
+  const allEvents: any[] = [];
   combinedGroups.forEach(group => {
-    group.events.forEach(event => {
+    group.events.forEach((event: any) => {
       allEvents.push({...event, year: group.year});
     });
   });
@@ -589,7 +590,7 @@ export function getCombinedTimelineData() {
     }
     
     // Extract month from period if order not available
-    const getMonth = (period) => {
+    const getMonth = (period: string) => {
       const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
       const month = period.split(' ')[0];
       return monthNames.indexOf(month);
@@ -628,6 +629,21 @@ export function getCombinedTimelineData() {
   return orderedGroups;
 }
 
+// Extract experience data from timelineData
+export const experienceData = timelineData.experience.flatMap(yearGroup => 
+  yearGroup.events.map(event => ({
+    title: event.title,
+    company: event.title.split('@')[1]?.trim() || '',
+    companyLogo: event.image || '',
+    period: event.period,
+    duration: '', // Duration can be calculated if needed
+    location: '',
+    type: 'Full-time',
+    description: event.description,
+    skills: event.skills || [],
+  }))
+);
+
 // Helper function to combine career and education data for the timeline
 export function getCombinedCareerData() {
   // Map education data to match career entry format
@@ -643,7 +659,7 @@ export function getCombinedCareerData() {
   }));
 
   // Map experience data to match career entry format
-  const careerEntries = experienceData.map(exp => ({
+  const careerEntries = experienceData.map((exp: { title: any; company: any; companyLogo: any; period: any; duration: any; location: any; type: any; description: any; skills: any; }) => ({
     title: exp.title,
     company: exp.company,
     companyLogo: exp.companyLogo,
