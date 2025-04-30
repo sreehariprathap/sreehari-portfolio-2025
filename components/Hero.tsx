@@ -50,7 +50,7 @@ const Hero = () => {
     
     return (
         <div className={cn(
-            "flex flex-col justify-between h-screen bg-white/90 dark:bg-black/90 p-8 transition-all duration-700",
+            "flex flex-col justify-between h-screen p-8 transition-all duration-700",
             "before:absolute before:inset-0 before:bg-gradient-to-br before:opacity-20 before:transition-all before:duration-700",
             `before:${accentGradient}`
         )}>
@@ -89,7 +89,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
             >
-                <h3 className="text-lg font-medium ml-2 mb-4">Navigation</h3>
+                <h3 className="text-sm font-medium ml-2 mb-4">Navigation</h3>
                 <ul className="space-y-2">
                     {sections.map((section) => (
                         <li key={section.id}>
@@ -105,7 +105,7 @@ const Hero = () => {
                                     "text-sm mr-4 opacity-70 transition-all duration-300",
                                     activeSection === section.id && "opacity-100"
                                 )}>{section.number}</span>
-                                <span className="text-xl">{section.label}</span>
+                                <span className="text-md">{section.label}</span>
                                 <span className={cn(
                                     "ml-2 h-[1px] bg-current transition-all duration-300",
                                     activeSection === section.id ? "w-12" : "w-0 group-hover:w-12"
@@ -118,7 +118,7 @@ const Hero = () => {
             
             {/* Social Connect */}
             <motion.div
-                className="relative z-10"
+                className="relative z-10 pb-5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}

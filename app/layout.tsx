@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Chivo_Mono, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import GlobalCursor from "@/components/ui/GlobalCursor";
+import { CursorContextProvider } from "@/components/ui/cursor-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,14 +37,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${josefinSans.variable} ${chivoMono.variable} antialiased`}>
+      <body className={`${josefinSans.variable} ${chivoMono.variable} antialiased cursor-none`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <CursorContextProvider>
+            <GlobalCursor />
+            {children}
+          </CursorContextProvider>
         </ThemeProvider>
       </body>
     </html>
