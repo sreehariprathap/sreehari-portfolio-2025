@@ -1,14 +1,14 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "motion/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 export const HeroHighlight = ({
   children,
   className,
   containerClassName,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
 }) => {
@@ -38,10 +38,11 @@ export const HeroHighlight = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
+
   return (
     <div
       className={cn(
-        "group relative flex h-[40rem] w-full items-center justify-center bg-white dark:bg-black min-h-screen",
+        "group relative flex h-full w-full items-center justify-center bg-transparent",
         containerClassName,
       )}
       onMouseMove={handleMouseMove}
@@ -99,7 +100,7 @@ export const HeroHighlight = ({
         }}
       />
 
-      <div className={cn("relative z-20", className)}>{children}</div>
+      {children && <div className={cn("relative z-20 w-full", className)}>{children}</div>}
     </div>
   );
 };
