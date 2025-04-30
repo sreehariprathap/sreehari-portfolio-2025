@@ -343,84 +343,6 @@ export const skillsList = skillsCategories.reduce<{ name: string; icon: string }
   return [...acc, ...category.skills];
 }, []);
 
-export const experienceData = [
-  {
-    title: "Junior Software Developer",
-    company: "Equitable",
-    companyLogo: "/equitable-logo.jpg",
-    period: "May 2024 - Aug 2024",
-    duration: "4 mos",
-    location: "Waterloo, Ontario, Canada",
-    type: "Co-op · Hybrid",
-    description: "During my summer internship, I gained hands-on experience in insurance-related concepts and the development of service-oriented, customer-centric products. I contributed to the release of a Guaranteed Investment Account (GIA) for the Savings and Retirement department, enhancing platform functionality and user satisfaction by implementing six key enhancements based on real-time customer feedback. I played a key role in building and enhancing features for the Advisor Portal (ezComplete), a platform managing advisor-side savings and retirement options, using Angular and .NET. This involved developing expertise in batch jobs, MS SQL, and internationalization. I also collaborated closely with cross-functional teams to streamline project workflows, ensuring timely and efficient delivery of key features. Working with Microsoft Azure, I deployed applications, gained hands-on experience in cloud operations, and improved scalability. Additionally, I implemented multi-region deployments, achieving 99.9% uptime. By integrating cloud solutions, I optimized application performance and scalability, aligning with modern industry standards. To maintain high-quality standards, I conducted rigorous testing and debugging processes, reducing potential errors and improving product reliability. I also led knowledge-sharing sessions to optimize development workflows and reinforce agile best practices. Committed to continuous learning, I stayed updated on industry trends and best practices, further refining my technical and analytical skills within a real-world business environment.",
-    skills: ["Server Side Programming", ".NET Core", "Azure"],
-  },
-  {
-    title: "Software Engineer",
-    company: "Experion Technologies",
-    companyLogo: "/experion-logo.jpg",
-    period: "Apr 2023 - Aug 2023",
-    duration: "5 mos",
-    location: "Kochi, Kerala, India",
-    type: "Full-time",
-    description: "I joined as a Full Stack Developer Intern and transitioned into an Associate Software Engineer before advancing to a Software Engineer role. Throughout this journey, I worked extensively on EV charging applications and travel booking platforms, collaborating with major clients such as Stellantis, and Maserati. At Stellantis, I played a key role in launching Stellantis Lithium, a platform managing EV charging across all Stellantis car brands. This involved API integrations with Shell and EVgo, ensuring seamless interoperability. Simultaneously, I contributed to Stellantis MOPI, a side project enhancing related EV solutions. Following the successful launch of Stellantis Lithium, Maserati approached us for a customized platform, leading me to be part of the Maserati Public Charge development team, tailoring the EV charging experience to their unique requirements. Beyond EV solutions, I worked with Backroads Adventure Travel, revamping their group adventure trip booking platform. By redesigning the user interface with Angular and .NET, I optimized site loading speeds for better performance, significantly improving customer retention and satisfaction. Throughout these projects, I leveraged Angular, React Native, and Node.js to enhance application performance and reliability. Working in an agile environment, I gained expertise in deployment and release processes on Microsoft Azure, ensuring efficient and scalable solutions for high-profile clients.",
-    skills: ["Tailwind CSS", "Software Documentation", "Angular", "React Native", "Node.js"],
-  },
-  {
-    title: "Associate Software Engineer",
-    company: "Experion Technologies",
-    companyLogo: "/experion-logo.jpg",
-    period: "Apr 2022 - Apr 2023",
-    duration: "1 yr 1 mo",
-    location: "Kochi, Kerala, India",
-    type: "Full-time",
-    skills: ["Tailwind CSS", "Software Documentation", "Angular", ".NET", "Azure"],
-  },
-  {
-    title: "Full-stack Developer Trainee",
-    company: "Experion Technologies",
-    companyLogo: "/experion-logo.jpg",
-    period: "Dec 2021 - Mar 2022",
-    duration: "4 mos",
-    location: "Kochi, Kerala, India",
-    type: "Apprenticeship",
-    description: "Full stack web development training program provided as part of Experion Technologies ILP. Technologies covered are Angular, Dotnet, PostgreSQL, MSSQL, mongoDB, Jira, Git, AWS etc.",
-    skills: ["Software Documentation", "Problem Solving", "Angular", ".NET"],
-  },
-  {
-    title: "UI/UX Designer",
-    company: "Kiebot",
-    companyLogo: "/kiebot-logo.jpg",
-    period: "Oct 2021 - Nov 2021",
-    duration: "2 mos",
-    location: "Kannur, Kerala, India",
-    type: "Full-time · On-site",
-    description: "I joined Kiebot as a UI/UX Designer, working extensively on two major projects: EdTube, an e-learning platform, and Adithi, a workforce management solution. My role involved end-to-end user experience design, from requirement gathering and wireframing to prototyping and ensuring seamless communication between clients and the development team. I collaborated closely with stakeholders, conducted client meetings, and refined user flows to align with business goals. By bridging the gap between design and development, I played a key role in delivering intuitive and user-centric digital experiences.",
-    skills: ["Figma", "Software Documentation", "UX/UI Design"],
-  },
-  {
-    title: "Software Tester",
-    company: "CodeRythm Technology Private Limited",
-    companyLogo: "/coderhythm-logo.jpg",
-    period: "Apr 2021 - Sep 2021",
-    duration: "6 mos",
-    location: "Kozhikode, Kerala, India",
-    type: "Full-time",
-    description: "Joined Coderythm Technologies as an Intern and later transitioned into a Software Tester role, where I played a key role in ensuring high-quality web applications with a 98% defect-free release rate. While primarily working in manual and automated testing, I also contributed to frontend development using Angular and gained experience with Node.js and Express. In addition to writing unit tests, I collaborated closely with development teams to enhance application performance and reliability. I also presented solutions to international clients, strengthening business relationships and refining technical documentation practices.",
-    skills: ["Quality Assurance", "Software Documentation", "Testing"],
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "CodeRythm Technology Private Limited",
-    companyLogo: "/coderhythm-logo.jpg",
-    period: "Jun 2020 - Mar 2021",
-    duration: "10 mos",
-    location: "Remote",
-    type: "Part-time",
-    skills: ["Quality Assurance", "Web Development", "Testing"],
-  },
-];
-
 export const educationData = [
   {
     degree: "Applied Artificial Intelligence and Machine Learning",
@@ -453,3 +375,286 @@ export const educationData = [
     skills: ["Programming", "Networking", "Computer Hardware"],
   },
 ];
+
+// Timeline data organized by year in reverse chronological order
+export const timelineData = {
+  experience: [
+    {
+      year: "2024",
+      events: [
+        {
+          title: "Junior Software Developer @ Equitable Life",
+          period: "May 2024 - Aug 2024",
+          image: "/timeline/equitable.png",
+          description: "Survived my first Canadian work experience without turning into a maple-flavored popsicle! Helped launch a Guaranteed Investment Account for savings and retirement while becoming fluent in insurance-speak. Mastered the art of batch jobs, MS SQL wizardry, and saying 'sorry' like a true Canadian. Achieved 99.9% uptime with cloud deployments, which is more reliable than my morning alarm clock.",
+          skills: ["Server Side Programming", ".NET Core", "Azure"],
+          isKeyEvent: true,
+          order: 4 // Order number for proper sorting
+        }
+      ]
+    },
+    {
+      year: "2023",
+      events: [
+        {
+          title: "Moved to Canada!",
+          period: "August 2023",
+          image: "/timeline/canada.jpg",
+          description: "Packed my bags, said goodbye to tropical weather, and embraced the Great White North! Swapped palm trees for maple leaves and curry for poutine (but still sneaking in homemade curry). Started my Canadian adventure as an international student, quickly mastering the art of layering clothes and the mysterious 'eh?' at the end of sentences.",
+          isLifeEvent: true,
+          isKeyEvent: true,
+          order: 6 // Order number for proper sorting
+        },
+        {
+          title: "Software Engineer @ Experion Technologies",
+          period: "Apr 2023 - Aug 2023",
+          image: "/timeline/experion.png",
+          description: "Leveled up from intern to full-fledged Software Engineer faster than my coffee consumption! Built EV charging apps for Stellantis and Maserati (yes, THE Maserati) - turns out luxury cars need fancy charging too. Got so good at API integrations with Shell and EVgo that my colleagues started calling me the 'API Whisperer'.",
+          skills: ["Tailwind CSS", "Angular", "React Native", "Node.js"],
+          clients: ["Stellantis", "Maserati", "Backroads Adventure Travel"],
+          isKeyEvent: true,
+          order: 7 // Order number for proper sorting
+        },
+
+      ]
+    },
+    {
+      year: "2022",
+      events: [
+        {
+          title: "Associate Software Engineer @ Experion Technologies",
+          period: "Jan 2023 - Apr 2023",
+          description: "Continued my journey in the EV charging world, making electrons flow smoothly for cars and code alike. Learned that debugging Angular is like solving a mystery where you're simultaneously the detective, criminal, and confused bystander.",
+          skills: ["Tailwind CSS", "Angular", ".NET", "Azure"],
+          order: 8 // Order number for proper sorting
+        },
+        {
+          title: "Full-stack Developer Trainee @ Experion Technologies",
+          period: "Dec 2021 - Mar 2022",
+          description: "Boot camp on steroids! Cramming Angular, .NET, and database wizardry into my brain while pretending to understand everything. Turns out 'ILP' stands for 'Intensely Long Programming' sessions that somehow turned me into a developer.",
+          skills: ["Software Documentation", "Angular", ".NET"],
+          order: 9 // Order number for proper sorting
+        }
+      ]
+    },
+    {
+      year: "2021",
+      events: [
+        {
+          title: "UI/UX Designer @ Kiebot",
+          period: "Oct 2021 - Nov 2021",
+          image: "/timeline/kiebot.png",
+          description: "Briefly became a pixel perfectionist, designing EdTube (an e-learning platform) and Adithi (workforce management). Discovered my supernatural ability to translate client gibberish into actual wireframes and prototypes. Spent more time in Figma than in real life.",
+          skills: ["Figma", "UX/UI Design"],
+          isKeyEvent: true
+        },
+        {
+          title: "Software Tester @ CodeRythm Technology",
+          period: "Apr 2021 - Sep 2021",
+          image: "/timeline/cr.png",
+          description: "Professional bug hunter with a 98% defect-free release rate! Became suspiciously good at breaking things in ways developers never imagined. Secretly contributed to frontend code while no one was looking and somehow got away with it.",
+          skills: ["Quality Assurance", "Testing", "Angular"],
+          isKeyEvent: true
+        }
+      ]
+    },
+    {
+      year: "2020",
+      events: [
+        {
+          title: "Software Engineer Intern @ CodeRythm Technology",
+          period: "Jun 2020 - Mar 2021",
+          description: "My coding journey began with remote debugging and crying silent tears into my coffee. Learned that 'remote work' means wearing business attire on top and pajamas on the bottom. Somehow convinced people I knew what I was doing.",
+          skills: ["Quality Assurance", "Web Development", "Testing"]
+        }
+      ]
+    },
+    {
+      year: "2019",
+      events: [
+        {
+          title: "Graduated with B.Tech in Electronics & Communications",
+          period: "May 2019",
+          image: "/timeline/sahrdaya.png",
+          description: "Emerged from four years of engineering with a degree and the realization that software is where my heart truly belonged. Officially became an adult according to the calendar (jury's still out on the maturity part).",
+          isLifeEvent: true,
+          isKeyEvent: true
+        }
+      ]
+    }
+  ],
+  education: [
+    {
+      year: "2025",
+      events: [
+        {
+          title: "Graduated from Applied AI & Machine Learning Program",
+          period: "April 2025",
+          image: "/timeline/conestoga.png",
+          description: "Emerged as an AI wizard with my neural networks intact! Graduated from Conestoga's Applied AI & Machine Learning program with the ability to make machines think (and occasionally overthink). Celebrated by training an AI to generate excuses for why I'm late to my own graduation.",
+          skills: ["TensorFlow", "Machine Learning", "PyTorch", "Python", "LLMs"],
+          isLifeEvent: true,
+          isKeyEvent: true,
+          order: 1 // Order number for proper sorting
+        }
+      ]
+    },
+    {
+      year: "2024",
+      events: [
+        {
+          title: "Graduated from Computer Applications Development",
+          period: "April 2024",
+          image: "/timeline/conestoga.png",
+          description: "Leveled up my coding skills and emerged victorious from Conestoga's Computer Applications Development program with High Distinction! Celebrated by writing a 'Hello World' program that actually said goodbye. Ready to build software that doesn't just work, but impresses even my perfectionist inner critic.",
+          skills: ["ASP.NET", ".NET Framework", "C#", "SQL", "Full-Stack Development"],
+          isLifeEvent: true,
+          isKeyEvent: true,
+          order: 3 // Order number for proper sorting
+        },
+        {
+          title: "Applied AI & Machine Learning @ Conestoga College",
+          period: "Sep 2024 - Apr 2025",
+          image: "/timeline/conestoga.png",
+          description: "Embarking on a journey to teach machines to think so I don't have to. Planning to sweet-talk large language models into doing my homework. Will either save humanity or create Skynet - stay tuned!",
+          skills: ["TensorFlow", "Machine Learning", "PyTorch", "Python", "LLMs"],
+          isKeyEvent: true,
+          order: 2 // Order number for proper sorting
+        }
+      ]
+    },
+    {
+      year: "2023",
+      events: [
+        {
+          title: "Computer Applications Development @ Conestoga College",
+          period: "Sep 2023 - Apr 2024",
+          image:  "/timeline/conestoga.png",
+          description: "Jumped into the world of structured programming after years of JavaScript chaos. Discovered that semicolons are actually mandatory in some languages. Trying to convince professors that 'works in production' is a valid testing methodology.",
+          skills: ["ASP.NET", ".NET Framework", "C#", "SQL", "Full-Stack Development"],
+          isKeyEvent: true,
+          order: 5 // Order number for proper sorting
+        }
+      ]
+    },
+    {
+      year: "2019",
+      events: [
+        {
+          title: "B.Tech in Electronics & Communications @ SCET",
+          period: "2015 - 2019",
+          description: "Spent four years learning about circuits while secretly programming on the side. Joined IEEE to look smart on my resume. Discovered that hardware is just software you can kick when it doesn't work.",
+          skills: ["Programming", "Networking", "Computer Hardware"]
+        }
+      ]
+    }
+  ]
+};
+
+// Combined timeline data for unified view
+export function getCombinedTimelineData() {
+  // Combine experience and education events
+  const allYearGroups = [...timelineData.experience, ...timelineData.education];
+  
+  // Create a map to merge events from the same year
+  const yearMap = new Map();
+  
+  allYearGroups.forEach(yearGroup => {
+    const year = yearGroup.year;
+    
+    if (!yearMap.has(year)) {
+      yearMap.set(year, { year, events: [] });
+    }
+    
+    // Add events to the year group
+    yearMap.get(year).events.push(...yearGroup.events);
+  });
+  
+  // Convert map to array and sort by year (descending)
+  const combinedGroups = Array.from(yearMap.values());
+  combinedGroups.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  
+  // Get all events across all years in a flat array
+  const allEvents = [];
+  combinedGroups.forEach(group => {
+    group.events.forEach(event => {
+      allEvents.push({...event, year: group.year});
+    });
+  });
+  
+  // Sort all events by order number if available
+  allEvents.sort((a, b) => {
+    if (a.order && b.order) {
+      return a.order - b.order;
+    }
+    
+    // Extract month from period if order not available
+    const getMonth = (period) => {
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const month = period.split(' ')[0];
+      return monthNames.indexOf(month);
+    };
+    
+    const monthA = getMonth(a.period);
+    const monthB = getMonth(b.period);
+    
+    // If both have valid months, compare them (reversed for descending order)
+    if (monthA !== -1 && monthB !== -1) {
+      return monthB - monthA;
+    }
+    
+    // Default to sorting by year
+    return parseInt(b.year) - parseInt(a.year);
+  });
+  
+  // Create a new year-based structure with properly ordered events
+  const orderedYearMap = new Map();
+  
+  allEvents.forEach(event => {
+    const year = event.year;
+    
+    if (!orderedYearMap.has(year)) {
+      orderedYearMap.set(year, { year, events: [] });
+    }
+    
+    // Add events to the year group
+    orderedYearMap.get(year).events.push(event);
+  });
+  
+  // Convert map back to array and maintain year sort order
+  const orderedGroups = Array.from(orderedYearMap.values());
+  orderedGroups.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  
+  return orderedGroups;
+}
+
+// Helper function to combine career and education data for the timeline
+export function getCombinedCareerData() {
+  // Map education data to match career entry format
+  const educationEntries = educationData.map(edu => ({
+    title: edu.degree,
+    school: edu.school,
+    schoolLogo: edu.schoolLogo,
+    period: edu.period,
+    location: edu.location,
+    field: edu.field,
+    activities: edu.activities,
+    skills: edu.skills,
+  }));
+
+  // Map experience data to match career entry format
+  const careerEntries = experienceData.map(exp => ({
+    title: exp.title,
+    company: exp.company,
+    companyLogo: exp.companyLogo,
+    period: exp.period,
+    duration: exp.duration,
+    location: exp.location,
+    type: exp.type,
+    description: exp.description,
+    skills: exp.skills,
+  }));
+
+  // Return combined data
+  return [...careerEntries, ...educationEntries];
+}
