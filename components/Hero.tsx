@@ -17,9 +17,8 @@ const Hero = React.memo(() => {
     const sections = useMemo(() => [
         { id: "about", label: "About", number: "01" },
         { id: "career", label: "Career", number: "02" },
-        { id: "education", label: "Education", number: "03" },
-        { id: "projects", label: "Projects", number: "04" },
-        { id: "skills", label: "Skills", number: "05" }
+        { id: "projects", label: "Projects", number: "03" },
+        { id: "skills", label: "Skills", number: "04" }
     ], []);
 
     // Optimized event listener with useCallback to avoid recreating functions

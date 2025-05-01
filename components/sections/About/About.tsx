@@ -6,7 +6,6 @@ import React from "react";
 import { ThemedSection } from "@/components/ui/section-theme-transition/themed-section";
 import { Bike, Book, ChartBarIncreasing, Cloud, Code, CookieIcon, Dumbbell, FilmIcon, FlaskConical, MapPin, Paintbrush } from "lucide-react";
 import { LinkPreview } from "@/components/ui/link-preview";
-import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 // Memoize the component to prevent unnecessary re-renders
 export default React.memo(function About() {
@@ -21,10 +20,9 @@ export default React.memo(function About() {
           <div className="flex flex-col md:flex-row">
             {/* Bio Content - left side */}
             <div className="p-10 relative z-10 overflow-visible">
-              <p className="mb-4 text-neutral-700 dark:text-neutral-300">
+              <div className="mb-4 text-neutral-700 dark:text-neutral-300">
                 Just your average tech-obsessed <span className="font-semibold text-purple-600 dark:text-purple-400">90s Kid</span> who watched the internet evolve from dial-up screeches to whatever TikTok is today—all from a tiny village in{" "}
                 <span className="inline-block relative z-20">
-                  <HeroHighlight containerClassName="inline">
                     <LinkPreview
                       url="https://en.wikipedia.org/wiki/Kerala"
                       isStatic={true}
@@ -35,15 +33,13 @@ export default React.memo(function About() {
                     >
                       <span className="inline">Kerala</span>
                     </LinkPreview>
-                  </HeroHighlight>
                 </span>{" "}
                 (that's God's own country, if you didn't know). Armed with an Engineering degree and enough diplomas in Computer Applications, AI, and ML to wallpaper a small room.
-              </p>
+              </div>
 
               <p className="mb-6 text-neutral-700 dark:text-neutral-300">
                 Spent 4 years as a <span className="font-semibold text-purple-600 dark:text-purple-400">Software Developer</span> bouncing between corporate giants and startups—basically I've seen both organized chaos and just plain chaos. Currently freezing my keyboard fingers off in the Great White North ({" "}
                 <span className="inline-block relative z-20">
-                  <HeroHighlight containerClassName="inline">
                     <LinkPreview
                       url="https://en.wikipedia.org/wiki/Canada"
                       isStatic={true}
@@ -54,7 +50,6 @@ export default React.memo(function About() {
                     >
                       <span className="inline">Canada</span>
                     </LinkPreview>
-                  </HeroHighlight>
                 </span>{" "}
                 ), where the maple syrup flows and so does my code. On a mission to build cool tech while secretly hoping it doesn't become sentient.
               </p>

@@ -29,7 +29,7 @@ const sectionThemes: Record<string, SectionTheme> = {
     textColor: 'text-blue-900 dark:text-blue-100',
     accentColor: 'bg-blue-500',
     heroAccent: 'from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(191, 219, 254, 0.6) 0%, rgba(219, 234, 254, 0.8) 90%)',
+    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.8) 0%, rgba(239, 246, 255, 0.9) 90%)', // More bluish-white
     darkPattern: 'radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.6) 0%, rgba(29, 78, 216, 0.3) 90%)',
   },
   education: {

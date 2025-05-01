@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "motion/react";
-import React, { useEffect } from "react";
+import React from "react";
 
 export const HeroHighlight = ({
   children,

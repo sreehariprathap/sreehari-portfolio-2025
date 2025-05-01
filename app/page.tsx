@@ -3,13 +3,13 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { ModeToggle } from "@/components/themeToggle";
 import { SectionThemeProvider } from "@/components/ui/section-theme-transition/theme-context";
-import dynamic from 'next/dynamic';
 import HeroSection from "@/components/sections/Hero/HeroSection";
 import About from "@/components/sections/About/About";
 
 // Lazy load components that aren't immediately visible
 const Career = lazy(() => import("@/components/sections/About/Career"));
 const Projects = lazy(() => import("@/components/sections/Projects/Projects"));
+const Skills = lazy(() => import("@/components/sections/Skills"));
 const Contact = lazy(() => import("@/components/sections/Contact/Contact"));
 const Footer = lazy(() => import("@/components/sections/Footer"));
 
@@ -25,6 +25,7 @@ export default function Home() {
   const [visibleSections, setVisibleSections] = useState({
     career: false,
     projects: false,
+    skills: false,
     contact: false,
     footer: false
   });
@@ -49,7 +50,7 @@ export default function Home() {
     }, observerOptions);
 
     // Observe each section container
-    ['career', 'projects', 'contact', 'footer'].forEach(id => {
+    ['career', 'projects', 'skills', 'contact', 'footer'].forEach(id => {
       const element = document.getElementById(id);
       if (element) sectionObserver.observe(element);
     });
@@ -91,6 +92,15 @@ export default function Home() {
                 {visibleSections.projects ? (
                   <Suspense fallback={<SectionLoader />}>
                     <Projects />
+                  </Suspense>
+                ) : <SectionLoader />}
+              </div>
+
+              {/* Skills Section */}
+              <div id="skills">
+                {visibleSections.skills ? (
+                  <Suspense fallback={<SectionLoader />}>
+                    <Skills />
                   </Suspense>
                 ) : <SectionLoader />}
               </div>
