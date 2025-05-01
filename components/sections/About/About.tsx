@@ -1,9 +1,12 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import SectionHeader from "@/components/SectionHeader";
 import React from "react";
 import { ThemedSection } from "@/components/ui/section-theme-transition/themed-section";
-import { Bike, Book, ChartBarIncreasing, Cloud, Code, CookieIcon, Dumbbell, FilmIcon, FlaskConical, MapPin, MoveIcon, Paintbrush } from "lucide-react";
+import { Bike, Book, ChartBarIncreasing, Cloud, Code, CookieIcon, Dumbbell, FilmIcon, FlaskConical, MapPin, Paintbrush } from "lucide-react";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 export default function About() {
   return (
@@ -16,33 +19,71 @@ export default function About() {
         <div className="bg-white dark:bg-black backdrop-blur-sm rounded-lg border border-neutral-200 dark:border-neutral-800 overflow-hidden">
           <div className="flex flex-col md:flex-row">
             {/* Bio Content - left side */}
-            <div className="p-10">
+            <div className="p-10 relative z-10 overflow-visible">
               <p className="mb-4 text-neutral-700 dark:text-neutral-300">
-                Just your average tech-obsessed <span className="font-semibold text-purple-600 dark:text-purple-400">90s Kid</span> who watched the internet evolve from dial-up screeches to whatever TikTok is today—all from a tiny village in Kerala (that's God's own country, if you didn't know). Armed with an Engineering degree and enough diplomas in Computer Applications, AI, and ML to wallpaper a small room.
+                Just your average tech-obsessed <span className="font-semibold text-purple-600 dark:text-purple-400">90s Kid</span> who watched the internet evolve from dial-up screeches to whatever TikTok is today—all from a tiny village in{" "}
+                <span className="inline-block relative z-20">
+                  <HeroHighlight containerClassName="inline">
+                    <LinkPreview
+                      url="https://en.wikipedia.org/wiki/Kerala"
+                      isStatic={true}
+                      imageSrc="/KERALA.jpg"
+                      width={300}
+                      height={200}
+                      className="font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline decoration-dotted underline-offset-2 decoration-emerald-400/50 hover:decoration-emerald-500 inline"
+                    >
+                      <span className="inline">Kerala</span>
+                    </LinkPreview>
+                  </HeroHighlight>
+                </span>{" "}
+                (that's God's own country, if you didn't know). Armed with an Engineering degree and enough diplomas in Computer Applications, AI, and ML to wallpaper a small room.
               </p>
 
               <p className="mb-6 text-neutral-700 dark:text-neutral-300">
-                Spent 4 years as a <span className="font-semibold text-purple-600 dark:text-purple-400">Software Developer</span> bouncing between corporate giants and startups—basically I've seen both organized chaos and just plain chaos. Currently freezing my keyboard fingers off in the Great White North (<span className="font-semibold text-blue-600 dark:text-blue-400">Canada</span>), where the maple syrup flows and so does my code. On a mission to build cool tech while secretly hoping it doesn't become sentient.
+                Spent 4 years as a <span className="font-semibold text-purple-600 dark:text-purple-400">Software Developer</span> bouncing between corporate giants and startups—basically I've seen both organized chaos and just plain chaos. Currently freezing my keyboard fingers off in the Great White North ({" "}
+                <span className="inline-block relative z-20">
+                  <HeroHighlight containerClassName="inline">
+                    <LinkPreview
+                      url="https://en.wikipedia.org/wiki/Canada"
+                      isStatic={true}
+                      imageSrc="/canadian-flag-day-1200x834.jpg"
+                      width={300}
+                      height={200}
+                      className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline decoration-dotted underline-offset-2 decoration-blue-400/50 hover:decoration-blue-500 inline"
+                    >
+                      <span className="inline">Canada</span>
+                    </LinkPreview>
+                  </HeroHighlight>
+                </span>{" "}
+                ), where the maple syrup flows and so does my code. On a mission to build cool tech while secretly hoping it doesn't become sentient.
               </p>
 
               {/* Location chip with hover effect */}
               <div className="mb-4 flex items-center">
-                <div 
-                  className="group relative px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full overflow-hidden transition-all duration-300 hover:shadow-md dark:shadow-md"
+                <LinkPreview
+                  url="https://en.wikipedia.org/wiki/Waterloo,_Ontario"
+                  isStatic={true}
+                  imageSrc="/waterloo-strategic-location-map-layout.jpg"
+                  width={300}
+                  height={200}
                 >
-                  <div className="relative z-10 flex items-center gap-1.5">
-                    <span className="text-blue-800 dark:text-blue-300 group-hover:text-white dark:group-hover:text-white transition-all duration-500">
-                      <MapPin size={16} />
-                    </span>
-                    <span className="text-sm font-medium group-hover:text-white dark:group-hover:text-white transition-all duration-500">
-                      Waterloo, Ontario
-                    </span>
+                  <div 
+                    className="group relative px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full overflow-hidden transition-all duration-300 hover:shadow-md dark:shadow-md"
+                  >
+                    <div className="relative z-10 flex items-center gap-1.5">
+                      <span className="text-blue-800 dark:text-blue-300 group-hover:text-white dark:group-hover:text-white transition-all duration-500">
+                        <MapPin size={16} />
+                      </span>
+                      <span className="text-sm font-medium group-hover:text-white dark:group-hover:text-white transition-all duration-500">
+                        Waterloo, Ontario
+                      </span>
+                    </div>
+                    {/* Gradient background with enhanced fade animation */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out transform origin-left group-hover:scale-x-100 scale-x-0"></span>
+                    {/* Dark mode background with enhanced fade */}
+                    <span className="absolute inset-0 bg-black opacity-0 dark:opacity-100 group-hover:opacity-0 transition-all duration-500 ease-in-out"></span>
                   </div>
-                  {/* Gradient background with enhanced fade animation */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out transform origin-left group-hover:scale-x-100 scale-x-0"></span>
-                  {/* Dark mode background with enhanced fade */}
-                  <span className="absolute inset-0 bg-black opacity-0 dark:opacity-100 group-hover:opacity-0 transition-all duration-500 ease-in-out"></span>
-                </div>
+                </LinkPreview>
               </div>
 
               {/* Technical Expertise with updated hover effect */}
