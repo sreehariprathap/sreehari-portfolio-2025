@@ -634,13 +634,13 @@ export const experienceData = timelineData.experience.flatMap(yearGroup =>
   yearGroup.events.map(event => ({
     title: event.title,
     company: event.title.split('@')[1]?.trim() || '',
-    companyLogo: event.image || '',
+    companyLogo: 'image' in event ? event.image : '',
     period: event.period,
     duration: '', // Duration can be calculated if needed
     location: '',
     type: 'Full-time',
     description: event.description,
-    skills: event.skills || [],
+    skills: 'skills' in event ? event.skills : [],
   }))
 );
 
