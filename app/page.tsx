@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable react/no-unescaped-entities */
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { ModeToggle } from "@/components/themeToggle";
 import { SectionThemeProvider } from "@/components/ui/section-theme-transition/theme-context";

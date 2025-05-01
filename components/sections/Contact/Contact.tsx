@@ -13,9 +13,9 @@ export default function Contact() {
         </div>
 
         <div className="bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800 p-6 md:p-8 lg:p-10">
-          <h3 className="text-2xl font-bold mb-6 text-center">Let's Connect!</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center">Let&apos;s Connect!</h3>
           <p className="text-center mb-8 max-w-lg mx-auto text-neutral-700 dark:text-neutral-300">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

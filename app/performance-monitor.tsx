@@ -77,7 +77,7 @@ export default function PerformanceMonitor() {
           });
           
           longTaskObserver.observe({ entryTypes: ['longtask'] });
-        } catch (e) {
+        } catch {
           console.warn('PerformanceObserver for longtask not supported');
         }
       }

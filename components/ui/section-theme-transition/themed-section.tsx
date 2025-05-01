@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 import { useSectionTheme, SectionObserver } from './theme-context';
 import { motion } from 'motion/react';

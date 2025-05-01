@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Performance monitoring utilities
  * Used to measure and report key performance metrics
@@ -18,7 +19,7 @@ interface PerformanceResult {
   duration: number;
   type: PerformanceMetricType;
   timestamp: number;
-  additionalInfo?: Record<string, any>;
+  additionalInfo?: Record<string, unknown>;
 }
 
 // Store measurements for analysis
@@ -51,14 +52,15 @@ export function measurePerformance<T>(
  * @param type Type of performance metric
  * @returns A decorator function that measures performance
  */
-export function measureAsyncPerformance<T>(
+export function measureAsyncPerformance(
   name: string,
   type: PerformanceMetricType = PerformanceMetricType.ApiCall
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return async (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
     const originalMethod = descriptor.value;
 
-    descriptor.value = async function(...args: any[]) {
+    descriptor.value = async function(...args: unknown[]) {
       const startTime = performance.now();
       try {
         return await originalMethod.apply(this, args);
@@ -79,7 +81,7 @@ export function recordMeasurement(
   name: string, 
   duration: number, 
   type: PerformanceMetricType, 
-  additionalInfo?: Record<string, any>
+  additionalInfo?: Record<string, unknown>
 ) {
   const measurement: PerformanceResult = {
     name,

@@ -185,7 +185,7 @@ export default function Projects() {
         
         <div className="max-w-4xl mx-auto bg-white dark:bg-black/20 backdrop-blur-sm rounded-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden">
           <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
-            {displayedProjects.map((project, index) => {
+            {displayedProjects.map((project) => {
               const projectName = project.name.split(' - ')[0];
               const projectTagline = project.name.split(' - ')[1] || "";
               
@@ -281,36 +281,3 @@ export default function Projects() {
     </ThemedSection>
   );
 }
-
-const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-black"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
