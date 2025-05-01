@@ -186,8 +186,9 @@ export default function Projects() {
         <div className="max-w-4xl mx-auto bg-white dark:bg-black/20 backdrop-blur-sm rounded-xl border border-neutral-200 dark:border-neutral-800 overflow-hidden">
           <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
             {displayedProjects.map((project) => {
-              const projectName = project.name.split(' - ')[0];
-              const projectTagline = project.name.split(' - ')[1] || "";
+                if (!project) return null;
+                const projectName = project.name.split(' - ')[0];
+                const projectTagline = project.name.split(' - ')[1] || "";
               
               return (
                 <motion.li

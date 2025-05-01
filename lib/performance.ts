@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Performance monitoring utilities
  * Used to measure and report key performance metrics
@@ -56,7 +55,6 @@ export function measureAsyncPerformance(
   name: string,
   type: PerformanceMetricType = PerformanceMetricType.ApiCall
 ) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return async (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
     const originalMethod = descriptor.value;
 

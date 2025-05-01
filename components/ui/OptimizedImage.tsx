@@ -72,7 +72,7 @@ export default function OptimizedImage({
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             // Preload the image when it's about to enter viewport
-            const img = new Image();
+            const img = new window.Image();
             img.src = src;
             observer.unobserve(entry.target);
           }

@@ -65,7 +65,7 @@ type ThemeContextType = {
   activeSection: string;
   setActiveSection: (section: string) => void;
   currentTheme: SectionTheme;
-  scrollContainerRef: React.RefObject<HTMLDivElement>;
+  scrollContainerRef: React.RefObject<HTMLDivElement | null>;
   progress: number;
 };
 
