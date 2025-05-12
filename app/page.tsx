@@ -60,9 +60,9 @@ export default function Home() {
   return (
     <div className="relative w-full min-h-screen">
       {/* Theme Toggle */}
-      <div className="fixed top-5 right-5 z-50">
+      {/* <div className="fixed top-5 right-5 z-50">
         <ModeToggle />
-      </div>
+      </div> */}
 
       <SectionThemeProvider>
         <div className="flex flex-col lg:flex-row min-h-screen">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Download, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ModeToggle } from "./themeToggle";
 
 interface SocialConnectProps {
     linkedinUrl?: string;
@@ -20,15 +21,17 @@ const SocialConnect = ({
     return (
         <div className="flex flex-col">
             <div className="flex items-center justify-start gap-5 w-full py-4 px-2">
-                {/* Left side - Profile Image */}
-                <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-gray-300 dark:border-gray-700">
-                    <Image
-                        src="/hari.png"
-                        alt="Sreehari Prathap"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                {/* Left side - Profile Image and Theme Toggle */}
+                <div className="flex flex-col items-center gap-2">
+                    <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-gray-300 dark:border-gray-700">
+                        <Image
+                            src="/hari.png"
+                            alt="Sreehari Prathap"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
                 </div>
 
                 {/* Right side - Social Icons */}
@@ -55,8 +58,9 @@ const SocialConnect = ({
                     </Link>
                 </div>
             </div>
-            <div className="flex gap-2 items-center">
-                Lets Connect | 
+            <div className="flex gap-4 items-center">
+            <ModeToggle />
+
                 <span className="group flex gap-1 items-center cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
                     <span className="relative">
                         Download my Resume
