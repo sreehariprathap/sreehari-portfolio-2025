@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
+import { SeasonalSectionDecorator } from "./ui/section-seasonal-decorator";
+// import { useSectionTheme } from "./ui/section-theme-transition/theme-context";
 
 interface SectionHeaderProps {
   title: string;
@@ -17,6 +19,8 @@ export default function SectionHeader({
   viewMode = "timeline", 
   onViewModeChange 
 }: SectionHeaderProps) {
+  
+  // const { currentTheme } = useSectionTheme();
   
   const toggleViewMode = () => {
     if (onViewModeChange) {
@@ -35,6 +39,10 @@ export default function SectionHeader({
           transition={{ duration: 0.6 }}
         >
           {title}
+          {title === "About Me" && <span className="text-2xl ml-2 opacity-80">🌸</span>}
+          {title === "Career" && <span className="text-2xl ml-2 opacity-80">☀️</span>}
+          {title === "Projects" && <span className="text-2xl ml-2 opacity-80">🍂</span>}
+          {title === "Skills" && <span className="text-2xl ml-2 opacity-80">❄️</span>}
         </motion.h2>
         
         <motion.span
@@ -47,6 +55,9 @@ export default function SectionHeader({
           {number}
         </motion.span>
       </div>
+      
+      {/* Seasonal decorations */}
+      <SeasonalSectionDecorator />
       
       {/* View mode toggle */}
       {showViewToggle && onViewModeChange && (
@@ -71,7 +82,15 @@ export default function SectionHeader({
       )}
       
       <motion.div
-        className="absolute -bottom-4 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"
+        className="absolute -bottom-4 left-0 h-1 bg-gradient-to-r"
+        style={{ 
+          backgroundImage: `linear-gradient(to right, ${
+            title === "About Me" ? "var(--pink-500), var(--rose-500)" :
+            title === "Career" ? "var(--amber-500), var(--yellow-500)" :
+            title === "Projects" ? "var(--orange-500), var(--red-500)" :
+            "var(--sky-500), var(--blue-500)"
+          })`
+        }}
         initial={{ width: 0 }}
         whileInView={{ width: "4rem" }}
         viewport={{ once: true, margin: "-100px" }}

@@ -1,9 +1,9 @@
 'use client';
 import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { ModeToggle } from "@/components/themeToggle";
 import { SectionThemeProvider } from "@/components/ui/section-theme-transition/theme-context";
 import HeroSection from "@/components/sections/Hero/HeroSection";
 import About from "@/components/sections/About/About";
+import { SeasonalElementsContainer } from '@/components/ui/seasonal-elements';
 
 // Lazy load components that aren't immediately visible
 const Career = lazy(() => import("@/components/sections/About/Career"));
@@ -65,6 +65,9 @@ export default function Home() {
       </div> */}
 
       <SectionThemeProvider>
+        {/* Seasonal elements that change based on active section */}
+        <SeasonalElementsContainer />
+        
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Hero Section - Left 50% with enhanced highlight effect */}
           <HeroSection />

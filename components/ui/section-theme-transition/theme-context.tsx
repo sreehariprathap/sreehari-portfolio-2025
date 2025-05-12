@@ -5,6 +5,8 @@ import { useScroll, useMotionValueEvent } from 'motion/react';
 
 type SectionTheme = {
   id: string;
+  name: string;
+  season: 'spring' | 'summer' | 'fall' | 'winter';
   backgroundColor: string;
   textColor: string;
   accentColor: string;
@@ -16,48 +18,47 @@ type SectionTheme = {
 const sectionThemes: Record<string, SectionTheme> = {
   about: {
     id: 'about',
-    backgroundColor: 'bg-indigo-50/90 dark:bg-indigo-950/90',
-    textColor: 'text-indigo-900 dark:text-indigo-100',
-    accentColor: 'bg-indigo-500',
-    heroAccent: 'from-indigo-500 to-indigo-700 dark:from-indigo-600 dark:to-indigo-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(199, 210, 254, 0.6) 0%, rgba(224, 231, 255, 0.8) 90%)',
-    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(49, 46, 129, 0.6) 0%, rgba(79, 70, 229, 0.3) 90%)',
+    name: 'Spring',
+    season: 'spring',
+    backgroundColor: 'bg-pink-50/90 dark:bg-pink-950/90',
+    textColor: 'text-pink-900 dark:text-pink-100',
+    accentColor: 'bg-pink-500',
+    heroAccent: 'from-pink-400 to-rose-600 dark:from-pink-600 dark:to-rose-800',
+    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(251, 207, 232, 0.6) 0%, rgba(253, 242, 248, 0.8) 90%)',
+    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(157, 23, 77, 0.6) 0%, rgba(131, 24, 67, 0.3) 90%)',
   },
   career: {
     id: 'career',
-    backgroundColor: 'bg-blue-50/90 dark:bg-blue-950/90',
-    textColor: 'text-blue-900 dark:text-blue-100',
-    accentColor: 'bg-blue-500',
-    heroAccent: 'from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.8) 0%, rgba(239, 246, 255, 0.9) 90%)', // More bluish-white
-    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.6) 0%, rgba(29, 78, 216, 0.3) 90%)',
-  },
-  education: {
-    id: 'education',
-    backgroundColor: 'bg-purple-50/90 dark:bg-purple-950/90',
-    textColor: 'text-purple-900 dark:text-purple-100',
-    accentColor: 'bg-purple-500',
-    heroAccent: 'from-purple-500 to-purple-700 dark:from-purple-600 dark:to-purple-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(233, 213, 255, 0.6) 0%, rgba(243, 232, 255, 0.8) 90%)',
-    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(88, 28, 135, 0.6) 0%, rgba(107, 33, 168, 0.3) 90%)',
+    name: 'Summer',
+    season: 'summer',
+    backgroundColor: 'bg-yellow-50/90 dark:bg-yellow-950/90',
+    textColor: 'text-yellow-900 dark:text-yellow-100',
+    accentColor: 'bg-yellow-500',
+    heroAccent: 'from-yellow-400 to-amber-600 dark:from-yellow-600 dark:to-amber-700',
+    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(254, 240, 138, 0.6) 0%, rgba(253, 246, 178, 0.8) 90%)',
+    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(161, 98, 7, 0.6) 0%, rgba(133, 77, 14, 0.3) 90%)',
   },
   projects: {
     id: 'projects',
-    backgroundColor: 'bg-green-50/90 dark:bg-green-950/90',
-    textColor: 'text-green-900 dark:text-green-100',
-    accentColor: 'bg-green-500',
-    heroAccent: 'from-green-500 to-green-700 dark:from-green-600 dark:to-green-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(187, 247, 208, 0.6) 0%, rgba(220, 252, 231, 0.8) 90%)',
-    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(6, 78, 59, 0.6) 0%, rgba(20, 83, 45, 0.3) 90%)',
+    name: 'Fall',
+    season: 'fall',
+    backgroundColor: 'bg-orange-50/90 dark:bg-orange-950/90',
+    textColor: 'text-orange-900 dark:text-orange-100',
+    accentColor: 'bg-orange-500',
+    heroAccent: 'from-orange-500 to-red-600 dark:from-orange-600 dark:to-red-700',
+    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(253, 230, 138, 0.6) 0%, rgba(251, 211, 141, 0.8) 90%)',
+    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(154, 52, 18, 0.6) 0%, rgba(124, 45, 18, 0.3) 90%)',
   },
   skills: {
     id: 'skills',
-    backgroundColor: 'bg-amber-50/90 dark:bg-amber-950/90',
-    textColor: 'text-amber-900 dark:text-amber-100',
-    accentColor: 'bg-amber-500',
-    heroAccent: 'from-amber-500 to-amber-700 dark:from-amber-600 dark:to-amber-900',
-    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(254, 243, 199, 0.6) 0%, rgba(254, 249, 195, 0.8) 90%)',
-    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(146, 64, 14, 0.6) 0%, rgba(120, 53, 15, 0.3) 90%)',
+    name: 'Winter',
+    season: 'winter',
+    backgroundColor: 'bg-sky-50/90 dark:bg-sky-950/90',
+    textColor: 'text-sky-900 dark:text-sky-100',
+    accentColor: 'bg-sky-500',
+    heroAccent: 'from-sky-400 to-blue-600 dark:from-sky-600 dark:to-blue-800',
+    lightPattern: 'radial-gradient(circle at 10% 20%, rgba(224, 242, 254, 0.6) 0%, rgba(240, 249, 255, 0.9) 95%)',
+    darkPattern: 'radial-gradient(circle at 10% 20%, rgba(7, 89, 133, 0.6) 0%, rgba(12, 74, 110, 0.3) 90%)',
   },
 };
 
@@ -111,12 +112,16 @@ export const SectionThemeProvider = ({ children }: { children: React.ReactNode }
       // Body background pattern
       document.body.style.backgroundImage = pattern;
       
+      // Update data attributes for seasonal styling
+      document.documentElement.setAttribute('data-season', theme.season);
+      
       // Notify any observers about theme change (for hero section)
       const event = new CustomEvent('themechange', { 
         detail: { 
           section: activeSection,
           theme: theme,
-          isDarkMode
+          isDarkMode,
+          season: theme.season
         } 
       });
       document.dispatchEvent(event);
